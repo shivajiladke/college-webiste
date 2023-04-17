@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=chrome,edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <br>
+        <title> Student form</title>
+        <link href="studentstyle.css" rel="stylesheet" type="text/css">
+    </head>
+<body>
+    <div  class="shiv">
+        <form autocomplete="off" method="post" name="google-sheet">
+                <h3><center>Student Complaint form</center></h3>
+                <input type="text" placeholder="Type Your Full Name Here" name="full_name">
+                <input type="text" placeholder="Type Your Email Id Here" name="Email">
+                <select name="Year">
+                    <option value="Not Select Year">Select Year </option>
+                    <option value="1st-year">1 Year</option>
+                    <option value="2nd-year">2 Year </option>
+                    <option value="3rd-year">3 Year </option>
+                    <option value="final-year">final Year </option>
+                    <option>other</option>
+                    
+                 </select>
+                <input type="tex" placeholder="Type Your Mobile Number Here" name="Mobile_number">
+                <select name="Complaint_categery">
+                    <option value="Not select Categery">Select Complaint Categery </option>
+                    <option value="Ragging">Ragging</option>
+                    <option value="staff">Staff </option>
+                    <option value="Washroom">Washroom </option>
+                    <option value="Classroom">Classroom </option>
+                    <option value="Canteen">Canteen </option>
+                    
+                 </select>
+                <input type="text" placeholder="Type Your Id Card Number Here" name="Id">
+                
+                 <select name="Branch">
+                    <option value="Not Select Branch">Select Branch </option>
+                    <option value="E&TC">E&TC</option>
+                    <option value="CSE">CSE </option>
+                    <option value="IT">IT </option>
+                    <option value="MECH">MECH </option>
+                    <option value="other">other</option>
+                    
+                 </select>
+
+                 <textarea rows="4" placeholder="Write your Complaint" name="Complaint"></textarea>
+                 <label><b>Gender</b></label><br>
+
+                 Male <input type="radio" name="gender" value="Male">
+                 Female <input type="radio" name="gender" value="Female">
+
+                 <button type="submit" name="submit">Submit</button>
+                 <button type="reset" class="reset">Reset</button>
+        </form>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzwuI5oxlKmls7MDHBpyYxgqWAHupRfdqNsoSwvoKMJPdmXFCe5fHhiTf_IH8bHiqH5DQ/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Complaining us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+    <marquee bgcolor="orange">
+		<font  size="6">
+			Welcome to Anuradha Enginering College Chikhli,Buldhana-443201
+		</font>
+	</marquee >
+</body>
+</html>

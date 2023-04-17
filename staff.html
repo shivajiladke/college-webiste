@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=chrome,edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <br>
+        <title> Staff form</title>
+        <link href="staffstyle.css" rel="stylesheet" type="text/css">
+    </head>
+<body>
+    <div  class="divya">
+        <form autocomplete="off"  method="post" name="google-sheet">
+                <h3><center>Staff Complaint form</center></h3>
+                <input type="tex" placeholder="Type Your Full Name Here" name="full_name">
+                <input type="tex" placeholder="Type Your Email Id Here" name="Email">
+                <input type="tex" placeholder="Type Your Mobile Number Here" name="Mobile_number">
+                <input type="tex" placeholder="Type Your Designation Here" name="Designation">
+                <input type="tex" placeholder="Type Your Id Here" name="Id">
+                
+                 <select name="Staff">
+                    <option value="Not Select">select an option </option>
+                    <option value="E&TC">E&TC Staff</option>
+                    <option value="CSE">CSE Staff</option>
+                    <option value="IT">IT Staff</option>
+                    <option value="MECH">MECH Staff</option>
+                    <option value="Account">Account Staff</option>
+                    <option value="Canteen"> Canteen Staff</option>
+                    <option value=" Lab">Lab Staff</option>
+                    <option value="Security">Security Staff</option>
+                    <option value="Management">Management Staff</option>
+                 </select>
+
+                 <textarea rows="4" placeholder="Write your Complaint" name="Complaint"></textarea>
+                 <label><b>Gender</b></label><br>
+
+                 Male<input type="radio" name="gender" value="Male">
+                 Female<input type="radio" name="gender" value="Female">
+
+                 <button type="submit" name="submit">Submit</button>
+                 <button type="reset" class="reset">Reset</button>
+        </form>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzWaW2O8mbbmIxNlOumSAaswr3T-HCsBXpl_PyNZ-gerVYa6JJUHKzfjnZ9naEd4Y4Kqw/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+    <marquee bgcolor="orange">
+		<font  size="6">
+			Welcome to Anuradha Enginering College Chikhli,Buldhana-443201
+		</font>
+	</marquee >
+</body>
+</html>

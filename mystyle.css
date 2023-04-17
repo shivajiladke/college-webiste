@@ -1,0 +1,33 @@
+ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+ul li
+{
+ background-color: rgb(238, 66, 4);
+ width: 375px;
+ height: 35px;
+ line-height: 35px;
+ float: left;
+ border:1px solid rgb(180, 28, 28);
+ text-align: center;
+}
+ul li a
+{
+    color: rgb(10, 9, 1);
+    text-decoration: none;
+    display: block;
+}
+ul li a:hover
+{
+    background-color: greenyellow;
+}
+ul li ul li
+{
+    display: none;
+}
+ul li:hover ul li
+{
+    display: block;
+}
